@@ -28,17 +28,36 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() {
         // If movement input is not 0, dont move.
         if (movementInput != Vector2.zero) {
-            int count = rb.Cast(
-                 movementInput,
-                 movementFilter,
-                 castCollision,
-                 moveSpeed * Time.fixedDeltaTime + collisionOffset
-            );
-
-            if (count == 0) {
-                rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
+            // Try move the player in the direction they want.
+            bool moved = TryMove(movementInput);
+            // If they are not able to move, test x and y separately. 
+            // This allows for a player to move up a wall if they are
+            // right up against it.
+            if (!moved) {
+                // Try for X
+                moved = TryMove(new Vector2(movementInput.x, 0));
+                if (!moved) {
+                    // Try for Y
+                    TryMove(new Vector2(0, movementInput.y));
+                }
             }
         }
+    }
+
+
+    private bool TryMove(Vector2 direction) {
+        int count = rb.Cast(
+                direction,
+                movementFilter,
+                castCollision,
+                moveSpeed * Time.fixedDeltaTime + collisionOffset
+        );
+
+        if (count == 0) {
+            rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+            return true;
+        } 
+        return false;
     }
 
     void OnMove(InputValue movementValue) {
