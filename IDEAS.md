@@ -1,5 +1,11 @@
 # File for ideas
 
+Potential Softwares to Use:
+- Unity (MUST)
+- Aseprite
+- Pyxel Edit
+
+
 Environment Description:
 
 Could potentially be a slum, run down, dark colour scheme, shit on fire, etc...
@@ -8,6 +14,15 @@ On Death:
 
 when the player dies they are sent to the 'back rooms'.
 they have to escape the backrooms in a set amount of time otherwise they restart from the start of the game (maybe)
+
+Potential Features:
+
+- Broken / Worn tiles that could crumble when Joe steps on them. This will drop Joe into the backrooms.
+- Joe has a small amount of time to escape the Backrooms before he dies to an unknown entity.
+- Joe can find and use Monster on the floor in the Backrooms (Randomly Generated) to run faster for a short period of time.
+- The Backrooms are generated randomly so there is no specific pattern or path the user can follow to escape quicker each time. New escape and exit every time. 
+
+
 
 STORY PLAN: 
 
