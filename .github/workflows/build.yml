@@ -1,16 +1,17 @@
 name: joe
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   build:
     name: Build joe
     runs-on: ubuntu-latest
-    matrix:
-      targetPlatform:
-        - StandaloneLinux64
-        - StandaloneWindows
-        - StandaloneWindows64
+    strategy:
+      matrix:
+        targetPlatform:
+          - StandaloneLinux64
+          - StandaloneWindows
+          - StandaloneWindows64
     steps:
       # Checkout
       - name: Checkout repository
