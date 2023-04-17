@@ -6,11 +6,12 @@ jobs:
   build:
     name: Build joe
     runs-on: ubuntu-latest
-    matrix:
-      targetPlatform:
-        - StandaloneLinux64
-        - StandaloneWindows
-        - StandaloneWindows64
+    strategy:
+      matrix:
+        targetPlatform:
+          - StandaloneLinux64
+          - StandaloneWindows
+          - StandaloneWindows64
     steps:
       # Checkout
       - name: Checkout repository
