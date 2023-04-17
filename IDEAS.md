@@ -4,6 +4,11 @@ Environment Description:
 
 Could potentially be a slum, run down, dark colour scheme, shit on fire, etc...
 
+On Death:
+
+when the player dies they are sent to the 'back rooms'.
+they have to escape the backrooms in a set amount of time otherwise they restart from the start of the game (maybe)
+
 STORY PLAN: 
 
 joe wakes up in the house, is hungover and complains
