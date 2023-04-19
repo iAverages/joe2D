@@ -26,7 +26,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     private void FixedUpdate() {
@@ -74,4 +77,6 @@ public class PlayerController : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
 
     }
+
+
 }
