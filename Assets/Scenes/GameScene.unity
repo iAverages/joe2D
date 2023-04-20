@@ -8445,36 +8445,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4325706708614457583, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 4325706708614457583, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598290286799404608, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1205827075, guid: 96b5202696d06fc41b345af5605c6596, type: 3}
-    - target: {fileID: 8222482531343931429, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: 6f32c385a34da534bb864e00597e7df9, type: 3}
-    - target: {fileID: 8222482531343931429, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8486060498535214712, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8486060498535214712, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8486060498535214712, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
-      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8486060498535214712, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
