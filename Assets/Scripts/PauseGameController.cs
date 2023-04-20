@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseGameController : MonoBehaviour
-{
-    
-    public GameObject PauseMenu;
+{     
 
-    public bool isPaused = false;
+    public static bool isPaused = false;
+
+    public GameObject PauseMenu;
 
     
     void Start()
     {
+        isPaused = false;
         PauseMenu.SetActive(false);
     }
 
     
     void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
+        //if(Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(isPaused)
             {
