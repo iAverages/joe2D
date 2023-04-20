@@ -1,7 +1,11 @@
 name: joe
 
-on: [pull_request]
-
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  
 jobs:
   build:
     name: Build joe
@@ -15,12 +19,12 @@ jobs:
     steps:
       # Checkout
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           lfs: true
 
       # Cache
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: Library
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
@@ -38,7 +42,7 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
 
       # Output
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: Build
           path: build

@@ -11,44 +11,34 @@ public class PauseGameController : MonoBehaviour
    
 
     
-    void Start()
-    {        
+    void Start() {        
         isPaused = false;
         PauseMenu.SetActive(false);
     }
 
     
-    void Update()
-    {
-        //if(Input.GetKey(KeyCode.Escape))
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(isPaused)
-            {
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (isPaused) {
                 ResumeGame();        
-            }else
-            {
+            } else {
                 PauseGame();
             }
         }
     }
 
-    public void PauseGame()
-    {
-    PauseMenu.SetActive(true);
-    Time.timeScale = 0f;
-    isPaused = true;
-    //Player.SetActive(false)
-    GameObject.FindGameObjectWithTag("Player").SetActive(false);
+    public void PauseGame() {
+        PauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+        GameObject.FindGameObjectWithTag("Player").SetActive(false);
     }
 
-    public void ResumeGame()
-    {
-    PauseMenu.SetActive(false);
-    Time.timeScale = 1f;
-    isPaused = false;
-    //Player.SetActive(true)
-    GameObject.FindGameObjectWithTag("Player").SetActive(true);
+    public void ResumeGame() {
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+        GameObject.FindGameObjectWithTag("Player").SetActive(true);
     }   
 }
 
