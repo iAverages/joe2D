@@ -8,6 +8,7 @@ public class PauseGameController : MonoBehaviour
     public static bool isPaused = false;
 
     public GameObject PauseMenu;
+    public GameObject Player;
 
     
     void Start()
@@ -37,6 +38,8 @@ public class PauseGameController : MonoBehaviour
     PauseMenu.SetActive(true);
     Time.timeScale = 0f;
     isPaused = true;
+    //Player.SetActive(false)
+    GameObject.FindGameObjectWithTag("Player").SetActive(false);
     }
 
     public void ResumeGame()
@@ -44,6 +47,8 @@ public class PauseGameController : MonoBehaviour
     PauseMenu.SetActive(false);
     Time.timeScale = 1f;
     isPaused = false;
+    //Player.SetActive(true)
+    GameObject.FindGameObjectWithTag("Player").SetActive(true);
     }   
 }
 
