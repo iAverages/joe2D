@@ -2,21 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseGameController : MonoBehaviour
-{     
+public class PauseGameController : MonoBehaviour {     
+    public static bool isPaused = false;
+    public GameObject pauseMenu;
+    public GameObject player;
 
-    public static bool isPaused = false;    
-
-    public GameObject PauseMenu;
-   
-
-    
     void Start() {        
         isPaused = false;
-        PauseMenu.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
-    
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (isPaused) {
@@ -28,17 +23,17 @@ public class PauseGameController : MonoBehaviour
     }
 
     public void PauseGame() {
-        PauseMenu.SetActive(true);
+        pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-        GameObject.FindGameObjectWithTag("Player").SetActive(false);
+        player.SetActive(false);
     }
 
     public void ResumeGame() {
-        PauseMenu.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        GameObject.FindGameObjectWithTag("Player").SetActive(true);
+        player.SetActive(true);
     }   
 }
 
