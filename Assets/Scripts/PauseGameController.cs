@@ -5,14 +5,14 @@ using UnityEngine;
 public class PauseGameController : MonoBehaviour
 {     
 
-    public static bool isPaused = false;
+    public static bool isPaused = false;    
 
     public GameObject PauseMenu;
-    public GameObject Player;
+   
 
     
     void Start()
-    {
+    {        
         isPaused = false;
         PauseMenu.SetActive(false);
     }
