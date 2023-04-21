@@ -13,17 +13,20 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
-    List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
+    List<RaycastHit2D> castCollision = new List<RaycastHit2D>(); 
+    
 
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();        
     }
 
     // Update is called once per frame
     void Update() {}
+
+    
 
     private void FixedUpdate() {
         bool moved = false;
@@ -70,4 +73,15 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>();
     }
+
+    
 }
+
+
+
+
+    
+   
+        
+
+            
