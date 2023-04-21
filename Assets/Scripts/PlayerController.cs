@@ -13,37 +13,20 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
-    List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
-
-    public AudioSource[] collisionSounds;
-
-    public AudioSource collision1;
-    public AudioSource collision2;
-    public AudioSource collision3;
-    public AudioSource collision4;
+    List<RaycastHit2D> castCollision = new List<RaycastHit2D>(); 
+    
 
     // Start is called before the first frame update
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-
-        collisionSounds = GetComponents<AudioSource>();
-        collision1 = collisionSounds[0];
-        collision2 = collisionSounds[1];
-        collision3 = collisionSounds[2];
-        collision4 = collisionSounds[3];
+        spriteRenderer = GetComponent<SpriteRenderer>();        
     }
 
     // Update is called once per frame
-    void Update() 
-    {
-        if (Input.GetKeyDown("f"))
-        {     
-            PlayRandomSound();
-        }
-    }
+    void Update() {}
+
+    
 
     private void FixedUpdate() {
         bool moved = false;
@@ -91,10 +74,7 @@ public class PlayerController : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-    public void PlayRandomSound()
-        { 
-            collisionSounds[Random.Range(0, collisionSounds.Length)].Play();
-        }
+    
 }
 
 
