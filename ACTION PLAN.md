@@ -14,3 +14,32 @@ no idea
 
 ## implement either a tracking camera that follows Joe or room based camera
 research blud idk that one video archie found. danyerl fix it.
+
+## fart sound button
+gonna be hilarious you'll be rolling on the floor crying
+
+code for it here:
+ public class CollisionSounds : MonoBehaviour {
+ 
+    public AudioSource[] collisionSounds;
+ 
+    public AudioSource collision1;
+    public AudioSource collision2;
+    public AudioSource collision3;
+    public AudioSource collision4;
+ 
+ 
+   void Start () {
+ 
+        collisionSounds = GetComponents<AudioSource>();
+        collision1 = collisionSounds[0];
+        collision2 = collisionSounds[1];
+        collision3 = collisionSounds[2];
+        collision4 = collisionSounds[3];
+ 
+    public void PlayRandomSound()
+    {
+     
+ 
+    }
+}
