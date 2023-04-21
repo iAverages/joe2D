@@ -4423,10 +4423,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 250ba9bc66de55a45b3cf35d37e6b061, type: 3}
-  - {fileID: 8300000, guid: 6acec38fb66f0654abcae1ace96602be, type: 3}
-  - {fileID: 8300000, guid: 27e0f7e5f4a68954e8e45c22aea976b5, type: 3}
   - {fileID: 8300000, guid: 2a0da84037196ea49b96fe7c38a7312e, type: 3}
+  - {fileID: 8300000, guid: 27e0f7e5f4a68954e8e45c22aea976b5, type: 3}
+  - {fileID: 8300000, guid: 6acec38fb66f0654abcae1ace96602be, type: 3}
+  - {fileID: 8300000, guid: 250ba9bc66de55a45b3cf35d37e6b061, type: 3}
 --- !u!82 &1359049647
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8790,6 +8790,22 @@ PrefabInstance:
     - target: {fileID: 3514356059413371590, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598290286799404608, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
+      propertyPath: m_Size.x
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598290286799404608, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598290286799404608, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1205827075, guid: 939ad235665af4544ac492534d47e18a, type: 3}
+    - target: {fileID: 7598290286799404608, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8486060498535214712, guid: 4297c191a86cf8e4c9de7467a5353dac, type: 3}
       propertyPath: m_RootOrder
