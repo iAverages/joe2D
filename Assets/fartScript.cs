@@ -18,11 +18,11 @@ public class fartScript : MonoBehaviour
         if (Input.GetKey(KeyCode.F))
         {     
             PlayRandomSound();
-            Debug.Log("F key was pressed.");
+            
         }
     }
 
     public void PlayRandomSound(){
-        fart.Play();
+        // Debug.Log("F key was pressed.");
     }
 }
