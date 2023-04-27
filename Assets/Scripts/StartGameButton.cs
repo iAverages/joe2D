@@ -7,7 +7,12 @@ public class StartGameButton : MonoBehaviour
 {
     public int gameStartScene;
 
-    public void StartGame(){
+    public void StartGame(){        
         SceneManager.LoadScene(gameStartScene);
-    }
+        ResumeGame();
+    }    
+
+    public void ResumeGame(){        
+        Time.timeScale = 1f;                
+    }  
 }
