@@ -1,24 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractionSystem : MonoBehaviour
 {
+    public int gameStartScene;
+
     private Collider2D z_Collider;
     [SerializeField]
     private ContactFilter2D z_Filter;
     private List<Collider2D> z_CollidedObjects = new List<Collider2D>(1);
 
-    private void start(){
-        z_Collider = GetComponent<Collider2D>();        
+    public GameObject PlayerPrompt;
+    public static bool isDisplayed = false;
+
+    protected virtual void Start(){
+        z_Collider = GetComponent<Collider2D>();
+        isDisplayed = false;
+        PlayerPrompt.SetActive(false);
     }
 
-    private void update(){
+    protected virtual void Update(){        
         
         z_Collider.OverlapCollider(z_Filter, z_CollidedObjects);
         foreach (var i in z_CollidedObjects)
         {
-            Debug.Log("Collided with " + i.name);
+            OnCollided(i.gameObject);            
         }
+
+        if (z_CollidedObjects.Count == 0)   
+        {
+            OnCollided(null);
+        }
+
     }
+
+    protected virtual void OnCollided(GameObject collidedObject)
+    {
+        Debug.Log("collided with " + collidedObject.name);
+    }
+
+    
+    
+
+    // public void DisplayPrompt(){
+    //     PlayerPrompt.SetActive(true);
+    //     isDisplayed = true;
+    // }
+
+    // public void HidePrompt(){
+    //     PlayerPrompt.SetActive(false);
+    //     isDisplayed = false;
+    // }
 }
+

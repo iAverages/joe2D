@@ -15,4 +15,4 @@ public class StartGameButton : MonoBehaviour
     public void ResumeGame(){        
         Time.timeScale = 1f;                
     }  
-}
+} 
