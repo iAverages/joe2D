@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractionSystem : MonoBehaviour
 {
+    public int gameStartScene;
+
     private Collider2D z_Collider;
     [SerializeField]
     private ContactFilter2D z_Filter;

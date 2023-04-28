@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractableObject : InteractionSystem
 {
@@ -19,6 +20,7 @@ public class InteractableObject : InteractionSystem
         if (Input.GetKey(KeyCode.E))
         {
             OnInteract();
+            StartGame();
         }
     }
 
@@ -40,4 +42,15 @@ public class InteractableObject : InteractionSystem
         PlayerPrompt.SetActive(false);
         isDisplayed = false;
     }
+
+
+    public void StartGame(){        
+        SceneManager.LoadScene(gameStartScene);
+        ResumeGame();
+    }  
+    
+
+    public void ResumeGame(){        
+        Time.timeScale = 1f;                
+    } 
 }
