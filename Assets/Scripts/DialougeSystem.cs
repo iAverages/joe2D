@@ -18,7 +18,7 @@ public class DialougeSystem : MonoBehaviour
 
     public void StartDialouge (Dialouge dialouge)
     {
-        nameBox.Text = dialouge.npc_name;
+        nameBox.text = dialouge.npc_name;
 
         sentences.Clear();
 
@@ -38,7 +38,7 @@ public class DialougeSystem : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        dialougeBox.TextMeshProUGUI = sentence;
+        dialougeBox.text = sentence;
     }
 
     void EndDialouge()
