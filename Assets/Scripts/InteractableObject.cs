@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class InteractableObject : InteractionSystem
 {
     private bool Interacted = false;
-    private bool isDisplayed = false;
 
     protected override void OnCollided(GameObject collidedObject)
     {
@@ -14,9 +13,10 @@ public class InteractableObject : InteractionSystem
         {
             HidePrompt();
             return;
-        } 
+        }
 
         DisplayPrompt();
+
         if (Input.GetKey(KeyCode.E))
         {
             OnInteract();
@@ -33,24 +33,26 @@ public class InteractableObject : InteractionSystem
         }
     }
 
-    public void DisplayPrompt(){
+    public void DisplayPrompt()
+    {
         PlayerPrompt.SetActive(true);
         isDisplayed = true;
     }
 
-    public void HidePrompt(){
+    public void HidePrompt()
+    {
         PlayerPrompt.SetActive(false);
         isDisplayed = false;
     }
 
-
-    public void StartGame(){        
+    public void StartGame()
+    {
         SceneManager.LoadScene(gameStartScene);
         ResumeGame();
-    }  
-    
+    }
 
-    public void ResumeGame(){        
-        Time.timeScale = 1f;                
-    } 
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+    }
 }

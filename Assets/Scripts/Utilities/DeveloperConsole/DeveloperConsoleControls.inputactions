@@ -1,0 +1,51 @@
+{
+    "name": "DeveloperConsoleControls",
+    "maps": [
+        {
+            "name": "Developer",
+            "id": "55221cbc-9797-4632-8fb9-41cb9b03a35d",
+            "actions": [
+                {
+                    "name": "ToggleConsole",
+                    "type": "Button",
+                    "id": "a3558876-bdb7-4bf4-85b8-c85f0a5beb74",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3c09c4ff-460e-4a0f-96c6-c6ac469b0975",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleConsole",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard & Mouse",
+            "bindingGroup": "Keyboard & Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
