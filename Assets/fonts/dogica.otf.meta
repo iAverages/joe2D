@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 5493ea0382370cb4a915c1c803092daf
+guid: 7a02d530c391c864ca18c73c125b3501
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 300
-  forceTextureCase: -1
+  fontSize: 16
+  forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Pixel-Life
+  - Dogica
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
