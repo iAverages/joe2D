@@ -6,11 +6,10 @@ using TMPro;
 
 public class DialougeSystem : MonoBehaviour
 {
-    public TMP_Text npcName;
-    public TMP_Text dialouge;
+    public Text nameBox;
+    public Text dialougeBox;
 
     public Queue<string> sentences;
-
     
     void Start()
     {
@@ -19,7 +18,7 @@ public class DialougeSystem : MonoBehaviour
 
     public void StartDialouge (Dialouge dialouge)
     {
-        npcName.TMP_Text = dialouge.npc_name;
+        nameBox.Text = dialouge.npc_name;
 
         sentences.Clear();
 
@@ -39,7 +38,7 @@ public class DialougeSystem : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        dialouge.TMP_Text = sentence;
+        dialougeBox.Text = sentence;
     }
 
     void EndDialouge()
