@@ -10,15 +10,15 @@ public class DialougeSystem : MonoBehaviour
     public TextMeshProUGUI dialougeBox;
 
     public Queue<string> sentences;
-    
+
     void Start()
     {
         sentences = new Queue<string>();
     }
 
-    public void StartDialouge (Dialouge dialouge)
+    public void StartDialouge(Dialouge dialouge)
     {
-        nameBox.Text = dialouge.npc_name;
+        // nameBox.Text = dialouge.npc_name;
 
         sentences.Clear();
 
@@ -29,7 +29,7 @@ public class DialougeSystem : MonoBehaviour
 
         DisplayNextSentence();
     }
-    
+
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
@@ -38,12 +38,11 @@ public class DialougeSystem : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        dialougeBox.TextMeshProUGUI = sentence;
+        // dialougeBox.TextMeshProUGUI = sentence;
     }
 
     void EndDialouge()
     {
         Debug.Log("End of conversation");
     }
-
 }
