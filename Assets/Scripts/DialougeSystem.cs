@@ -6,8 +6,8 @@ using TMPro;
 
 public class DialougeSystem : MonoBehaviour
 {
-    public Text nameBox;
-    public Text dialougeBox;
+    public TextMeshProUGUI nameBox;
+    public TextMeshProUGUI dialougeBox;
 
     public Queue<string> sentences;
     
@@ -38,7 +38,7 @@ public class DialougeSystem : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-        dialougeBox.Text = sentence;
+        dialougeBox.TextMeshProUGUI = sentence;
     }
 
     void EndDialouge()
