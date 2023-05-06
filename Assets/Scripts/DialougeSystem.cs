@@ -18,11 +18,7 @@ public class DialougeSystem : MonoBehaviour
 
     public void StartDialouge(Dialouge dialouge)
     {
-<<<<<<< HEAD
         nameBox.text = dialouge.npc_name;
-=======
-        // nameBox.Text = dialouge.npc_name;
->>>>>>> 97d901a106528c82cac2998813e9d4aa2f7ebf17
 
         sentences.Clear();
 
@@ -42,11 +38,7 @@ public class DialougeSystem : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
-<<<<<<< HEAD
         dialougeBox.text = sentence;
-=======
-        // dialougeBox.TextMeshProUGUI = sentence;
->>>>>>> 97d901a106528c82cac2998813e9d4aa2f7ebf17
     }
 
     void EndDialouge()
