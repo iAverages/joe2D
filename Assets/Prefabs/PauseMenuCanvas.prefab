@@ -803,6 +803,8 @@ GameObject:
   - component: {fileID: 993600246008047216}
   - component: {fileID: 993600246008047219}
   - component: {fileID: 8240024044597418897}
+  - component: {fileID: 1835631723310227584}
+  - component: {fileID: 4798439371282544016}
   m_Layer: 5
   m_Name: PauseMenuCanvas
   m_TagString: Untagged
@@ -906,6 +908,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 993600245839446181}
   player: {fileID: 0}
+--- !u!114 &1835631723310227584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993600246008047218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43726ed94b13f54091b1e0574da7d6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4798439371282544016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993600246008047218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a40205b740ecb4ea35101eee1a7a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStartScene: 0
 --- !u!1 &993600246056166244
 GameObject:
   m_ObjectHideFlags: 0
