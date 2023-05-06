@@ -5,8 +5,6 @@ using UnityEngine;
 public class DialogueSystem : MonoBehaviour
 {
     private Queue<string> sentences;
-    
-
 
 
     void Start()
@@ -14,7 +12,7 @@ public class DialogueSystem : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue()
+    public void StartDialogue(Dialogue dialogue)
     {
         Debug.Log("started conversation with " + dialogue.npc_name);
     }
