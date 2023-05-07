@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class DialogueSystem : MonoBehaviour
 {
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI dialogueText;
+
     private Queue<string> sentences;
 
 
@@ -14,7 +20,8 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("started conversation with " + dialogue.npc_name);
+        // Debug.Log("started conversation with " + dialogue.npc_name);
+        nameText.text = dialogue.npc_name;
 
         sentences.Clear();
 
@@ -36,6 +43,7 @@ public class DialogueSystem : MonoBehaviour
 
         string sentence = sentences.Dequeue();
         Debug.Log(sentence);
+        dialogueText.text = sentence;
     }
 
     void EndDialogue()

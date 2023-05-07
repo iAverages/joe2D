@@ -2024,6 +2024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ba5ffa4455b3a44be4cf9f68ea8f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 1634984295}
+  dialogueText: {fileID: 604516073}
 --- !u!4 &1132555799
 Transform:
   m_ObjectHideFlags: 0
@@ -6567,6 +6569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ba5ffa4455b3a44be4cf9f68ea8f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
 --- !u!114 &1718441149
 MonoBehaviour:
   m_ObjectHideFlags: 0
