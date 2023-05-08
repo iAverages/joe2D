@@ -17,6 +17,7 @@ public class InteractableObject : InteractionSystem
         } 
 
         DisplayPrompt();
+        FindObjectOfType<DialogueTrigger>().TriggerDialogue();
         if (Input.GetKey(KeyCode.E))
         {
             OnInteract();

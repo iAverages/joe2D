@@ -40,18 +40,8 @@ public class InteractionSystem : MonoBehaviour
     {
         Debug.Log("collided with " + collidedObject.name);
     }
-
-    
     
 
-    // public void DisplayPrompt(){
-    //     PlayerPrompt.SetActive(true);
-    //     isDisplayed = true;
-    // }
-
-    // public void HidePrompt(){
-    //     PlayerPrompt.SetActive(false);
-    //     isDisplayed = false;
-    // }
+  
 }
 

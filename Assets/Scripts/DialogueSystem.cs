@@ -20,7 +20,7 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("started conversation with " + dialogue.npc_name);
+        // Debug.Log("started conversation with " + dialogue.npc_name);
         nameText.text = dialogue.npc_name;      
 
         sentences.Clear();
