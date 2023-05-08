@@ -6,6 +6,7 @@ public class PauseGameController : MonoBehaviour {
     public static bool isPaused = false;
     public GameObject pauseMenu;
     public GameObject player;
+    public GameObject DialogueBox;
 
     void Start() {        
         isPaused = false;
@@ -27,6 +28,7 @@ public class PauseGameController : MonoBehaviour {
         Time.timeScale = 0f;
         isPaused = true;
         player.SetActive(false);
+        DialogueBox.SetActive(false);
     }
 
     public void ResumeGame() {
