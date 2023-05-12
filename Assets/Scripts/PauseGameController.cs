@@ -2,40 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseGameController : MonoBehaviour {     
+public class PauseGameController : MonoBehaviour
+{
     public static bool isPaused = false;
     public GameObject pauseMenu;
     public GameObject player;
     public GameObject DialogueBox;
 
-    void Start() {        
+    void Start()
+    {
         isPaused = false;
         pauseMenu.SetActive(false);
     }
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (isPaused) {
-                ResumeGame();        
-            } else {
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
                 PauseGame();
             }
         }
     }
 
-    public void PauseGame() {
+    public void PauseGame()
+    {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
         player.SetActive(false);
-        DialogueBox.SetActive(false);
     }
 
-    public void ResumeGame() {
+    public void ResumeGame()
+    {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
         player.SetActive(true);
-    }   
+    }
 }
 

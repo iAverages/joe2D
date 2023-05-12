@@ -15,21 +15,23 @@ public class InteractionSystem : MonoBehaviour
     public GameObject PlayerPrompt;
     public static bool isDisplayed = false;
 
-    protected virtual void Start(){
+    protected virtual void Start()
+    {
         z_Collider = GetComponent<Collider2D>();
         isDisplayed = false;
         PlayerPrompt.SetActive(false);
     }
 
-    protected virtual void Update(){        
-        
+    protected virtual void Update()
+    {
+
         z_Collider.OverlapCollider(z_Filter, z_CollidedObjects);
         foreach (var i in z_CollidedObjects)
         {
-            OnCollided(i.gameObject);            
+            OnCollided(i.gameObject);
         }
 
-        if (z_CollidedObjects.Count == 0)   
+        if (z_CollidedObjects.Count == 0)
         {
             OnCollided(null);
         }
@@ -40,8 +42,8 @@ public class InteractionSystem : MonoBehaviour
     {
         Debug.Log("collided with " + collidedObject.name);
     }
-    
 
-  
+
+
 }
 
