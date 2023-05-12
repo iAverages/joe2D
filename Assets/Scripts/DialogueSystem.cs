@@ -24,6 +24,7 @@ public class DialogueSystem : MonoBehaviour
         nameText.text = dialogue.npc_name;      
 
         sentences.Clear();
+        
 
         foreach (string sentence in dialogue.sentences)
         {
