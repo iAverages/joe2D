@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-
 
 public class DialogueSystem : MonoBehaviour
 {
+    public GameObject panel;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
     private Queue<string> sentences;
-
 
     void Start()
     {
@@ -20,20 +18,19 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        // Debug.Log("started conversation with " + dialogue.npc_name);
-        nameText.text = dialogue.npc_name;      
+        panel.SetActive(true);
+        nameText.text = dialogue.npc_name;
 
         sentences.Clear();
-        
 
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
 
-        DisplayNextSentence();        
+        DisplayNextSentence();
     }
-    
+
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
@@ -43,12 +40,15 @@ public class DialogueSystem : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
         dialogueText.text = sentence;
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
-        Debug.Log("End");
+        sentences = new Queue<string>();
+        ;
+        panel.SetActive(false);
+        dialogueText.text = "";
+        nameText.text = "";
     }
 }
