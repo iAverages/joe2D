@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2705250}
   - component: {fileID: 2705249}
-  - component: {fileID: 2705252}
   - component: {fileID: 2705251}
+  - component: {fileID: 2705252}
   m_Layer: 7
   m_Name: chest
   m_TagString: Untagged
@@ -233,8 +233,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.07, y: 0.07}
+  m_EdgeRadius: 0.03
 --- !u!114 &2705252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,8 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f6b5524956be54e8eb90095a62e803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStartScene: 2
-  z_Filter:
+  filter:
     useTriggers: 0
     useLayerMask: 0
     useDepth: 0
@@ -257,11 +256,12 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 64
+      m_Bits: 0
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  gameStartScene: 2
   PlayerPrompt: {fileID: 342594371}
 --- !u!1 &119013670
 GameObject:
@@ -6302,9 +6302,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1623834054}
   - component: {fileID: 1623834053}
-  - component: {fileID: 1623834052}
   - component: {fileID: 1623834051}
   - component: {fileID: 1623834055}
+  - component: {fileID: 1623834056}
   m_Layer: 0
   m_Name: deadMan
   m_TagString: Untagged
@@ -6329,34 +6329,6 @@ MonoBehaviour:
     sentences:
     - uugggghhh
     - '*dies*'
---- !u!114 &1623834052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623834050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f6b5524956be54e8eb90095a62e803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameStartScene: 3
-  z_Filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 64
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  PlayerPrompt: {fileID: 342594371}
 --- !u!212 &1623834053
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6450,6 +6422,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &1623834056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623834050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f6b5524956be54e8eb90095a62e803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  gameStartScene: 0
+  PlayerPrompt: {fileID: 342594371}
 --- !u!1 &1634984293
 GameObject:
   m_ObjectHideFlags: 0
@@ -7343,9 +7343,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2133166208}
   - component: {fileID: 2133166209}
-  - component: {fileID: 2133166210}
   - component: {fileID: 2133166211}
   - component: {fileID: 2133166212}
+  - component: {fileID: 2133166213}
   m_Layer: 7
   m_Name: slime
   m_TagString: Untagged
@@ -7420,34 +7420,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2133166210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133166207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f6b5524956be54e8eb90095a62e803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameStartScene: 2
-  z_Filter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 64
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  PlayerPrompt: {fileID: 342594371}
 --- !u!61 &2133166211
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7491,3 +7463,30 @@ MonoBehaviour:
     sentences:
     - what is popping
     - not me hopfully
+--- !u!114 &2133166213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133166207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ad6c89dd768a745b36941f9ccf7291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  dialogueTrigger: {fileID: 2133166212}

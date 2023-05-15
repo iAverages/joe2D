@@ -1,47 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class InteractionSystem : MonoBehaviour
 {
-    public int gameStartScene;
+    private Collider2D collider2d;
 
-    private Collider2D z_Collider;
     [SerializeField]
-    private ContactFilter2D z_Filter;
-    private List<Collider2D> z_CollidedObjects = new List<Collider2D>(1);
+    private ContactFilter2D filter;
+    private List<Collider2D> collidedObjects = new List<Collider2D>(1);
+    protected bool hasCollided = false;
 
-    public GameObject PlayerPrompt;
-    public static bool isDisplayed = false;
-
-    protected virtual void Start(){
-        z_Collider = GetComponent<Collider2D>();
-        isDisplayed = false;
-        PlayerPrompt.SetActive(false);
-    }
-
-    protected virtual void Update(){        
-        
-        z_Collider.OverlapCollider(z_Filter, z_CollidedObjects);
-        foreach (var i in z_CollidedObjects)
-        {
-            OnCollided(i.gameObject);            
-        }
-
-        if (z_CollidedObjects.Count == 0)   
-        {
-            OnCollided(null);
-        }
-
-    }
-
-    protected virtual void OnCollided(GameObject collidedObject)
+    protected virtual void Start()
     {
-        Debug.Log("collided with " + collidedObject.name);
+        collider2d = GetComponent<Collider2D>();
     }
-    
 
-  
+    protected virtual void Update()
+    {
+        collider2d.OverlapCollider(filter, collidedObjects);
+        foreach (var i in collidedObjects)
+        {
+            if (i.gameObject == null)
+            {
+                Debug.Log("Im fucked");
+                continue;
+            }
+            hasCollided = true;
+            Debug.Log(i.gameObject.name);
+            OnCollided(i.gameObject);
+        }
+
+        if (collidedObjects.Count == 0 && hasCollided)
+        {
+            OnCollidedExit();
+            hasCollided = false;
+        }
+    }
+
+    protected virtual void OnCollided(GameObject collidedObject) { }
+
+    protected virtual void OnCollidedExit() { }
 }
-

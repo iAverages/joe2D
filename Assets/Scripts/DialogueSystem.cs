@@ -41,7 +41,7 @@ public class DialogueSystem : MonoBehaviour
         dialogueText.text = sentence;
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         sentences = null;
     }
