@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundController : MonoBehaviour
+public class FartController : MonoBehaviour
 {
     [SerializeField] AudioClip[] sounds;
     AudioSource audioSource;
@@ -14,7 +14,11 @@ public class SoundController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            PlayRandomSound();
 
+        }
     }
 
     public void PlayRandomSound()
