@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DialogTriggerInteractable : InteractionSystem
 {
     private bool interacted = false;
     public Dialogue dialogue;
+    public GameObject dialougeManager;
 
     public void TriggerDialogue()
     {
-        GetComponent<DialogueSystem>().StartDialogue(dialogue);
+        dialougeManager.GetComponent<DialogueSystem>().StartDialogue(dialogue);
     }
 
     protected override void OnCollided(GameObject collidedObject)
@@ -18,7 +18,6 @@ public class DialogTriggerInteractable : InteractionSystem
         if (!interacted)
         {
             interacted = true;
-            Debug.Log("Interact with " + name);
             TriggerDialogue();
         }
     }

@@ -21,13 +21,7 @@ public class InteractionSystem : MonoBehaviour
         collider2d.OverlapCollider(filter, collidedObjects);
         foreach (var i in collidedObjects)
         {
-            if (i.gameObject == null)
-            {
-                Debug.Log("Im fucked");
-                continue;
-            }
             hasCollided = true;
-            Debug.Log(i.gameObject.name);
             OnCollided(i.gameObject);
         }
 
