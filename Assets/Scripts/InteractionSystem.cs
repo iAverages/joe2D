@@ -1,49 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class InteractionSystem : MonoBehaviour
 {
-    public int gameStartScene;
+    private Collider2D collider2d;
 
-    private Collider2D z_Collider;
     [SerializeField]
-    private ContactFilter2D z_Filter;
-    private List<Collider2D> z_CollidedObjects = new List<Collider2D>(1);
-
-    public GameObject PlayerPrompt;
-    public static bool isDisplayed = false;
+    private ContactFilter2D filter;
+    private List<Collider2D> collidedObjects = new List<Collider2D>(1);
+    protected bool hasCollided = false;
 
     protected virtual void Start()
     {
-        z_Collider = GetComponent<Collider2D>();
-        isDisplayed = false;
-        PlayerPrompt.SetActive(false);
+        collider2d = GetComponent<Collider2D>();
     }
 
     protected virtual void Update()
     {
-
-        z_Collider.OverlapCollider(z_Filter, z_CollidedObjects);
-        foreach (var i in z_CollidedObjects)
+        collider2d.OverlapCollider(filter, collidedObjects);
+        foreach (var i in collidedObjects)
         {
+            hasCollided = true;
             OnCollided(i.gameObject);
         }
 
-        if (z_CollidedObjects.Count == 0)
+        if (collidedObjects.Count == 0 && hasCollided)
         {
-            OnCollided(null);
+            OnCollidedExit();
+            hasCollided = false;
         }
-
     }
 
-    protected virtual void OnCollided(GameObject collidedObject)
-    {
-        Debug.Log("collided with " + collidedObject.name);
-    }
+    protected virtual void OnCollided(GameObject collidedObject) { }
 
-
-
+    protected virtual void OnCollidedExit() { }
 }
-

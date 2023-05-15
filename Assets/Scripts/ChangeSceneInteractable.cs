@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class InteractableObject : InteractionSystem
+public class ChangeSceneInteractable : InteractionSystem
 {
     private bool Interacted = false;
-
+    public int gameStartScene;
+    public GameObject PlayerPrompt;
 
     protected override void OnCollided(GameObject collidedObject)
     {
-        if (collidedObject == null)
-        {
-            HidePrompt();
-            return;
-        }
-
         DisplayPrompt();
-        FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+
         if (Input.GetKey(KeyCode.E))
         {
             OnInteract();
-            StartGame();
+            ChangeScene();
         }
+    }
+
+    protected override void OnCollidedExit()
+    {
+        HidePrompt();
     }
 
     protected virtual void OnInteract()
@@ -34,28 +34,21 @@ public class InteractableObject : InteractionSystem
         }
     }
 
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene(gameStartScene);
+        Time.timeScale = 1f;
+    }
+
     public void DisplayPrompt()
     {
         PlayerPrompt.SetActive(true);
-        isDisplayed = true;
+        hasCollided = true;
     }
 
     public void HidePrompt()
     {
         PlayerPrompt.SetActive(false);
-        isDisplayed = false;
-    }
-
-
-    public void StartGame()
-    {
-        SceneManager.LoadScene(gameStartScene);
-        ResumeGame();
-    }
-
-
-    public void ResumeGame()
-    {
-        Time.timeScale = 1f;
+        hasCollided = false;
     }
 }
